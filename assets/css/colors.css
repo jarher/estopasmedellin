@@ -1,6 +1,8 @@
 :root {
-  --Pale-gray: rgb(224, 224, 224);
+  --Very-light-gray: rgb(224, 224, 224);
+  --Pale-gray : rgb(201, 201, 201);
   --Gray: rgb(146, 146, 146);
+  --Dark-ray: rgb(85, 85, 85);
   --Pale-red: rgb(255, 0, 0);
   --Red: rgb(224, 0, 0);
   --dark-red: rgb(135, 0, 0);
