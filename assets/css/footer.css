@@ -1,0 +1,46 @@
+footer {
+  background-color: var(--Dark-red);
+  padding: 20px;
+  color: var(--White);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+footer h3 {
+  font-weight: 500;
+  text-align: center;
+  border-bottom: 1px solid var(--White);
+  padding: 5px;
+}
+.phones-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact-title {
+  text-align: center;
+  border-bottom: 1px solid var(--Wheat);
+  padding-bottom: 5px;
+  display: block;
+}
+.phones-container p {
+  font-size: 0.94rem;
+  font-weight: 500;
+}
+.phone {
+  margin: 0 10px;
+  display: inline-block;
+}
+.email-container a {
+  color: var(--White);
+  text-decoration: none;
+  display: block;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: 400;
+}
+.copyright {
+  text-align: center;
+  font-size: 0.7rem;
+
+}

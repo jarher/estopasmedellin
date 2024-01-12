@@ -9,6 +9,7 @@
   padding: 7px;
   border-top-left-radius: 20px;
   height: 60vh;
+  margin-top: 15px;
 }
 .products-main-title {
   background-color: var(--White);
@@ -25,7 +26,7 @@
   font-weight: 500;
 }
 .products-container {
-  margin: -90px 20px auto;
+  margin: -20% 20px auto;
   background-color: var(--White);
   padding: 5px;
   border-radius: 20px;
