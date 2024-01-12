@@ -1,0 +1,34 @@
+.principles {
+    padding: 50px 20px;
+    text-align: center;
+}
+.principles h3 {
+  color: var(--Pale-red);
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+.principles-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 20px;
+}
+.principle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.principle-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.principle img {
+    max-width: 50px;
+}
+.principle p {
+    color: var(--Gray);
+    font-size: 0.9rem;
+    width: 60%;
+}
