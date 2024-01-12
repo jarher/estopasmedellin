@@ -17,9 +17,18 @@
   left: 0;
   right: 0;
   bottom: 0;
-  top: 0;
-  background-color: var(--White);
+  top: 51px;
+  background-color: var(--Gray-transparent);
   border: 1px solid var(--Pale-gray);
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+.navbar-wrapper {
+  width: 90%;
+  margin: 10px auto auto;
+  background-color: var(--White);
+  border-radius: 20px;
+  padding: 20px;
 }
 .main-nav .navbar {
   list-style: none;
@@ -42,18 +51,63 @@
   color: var(--Dark-gray);
   text-align: center;
   line-height: 10vh;
-  transition: background 0.2s ease-in;
+  transition: all 0.2s ease-in;
   border-radius: 10px;
 }
-.main-nav .navbar li a:hover{
-    background-color:var(--Very-light-gray) ;
+.main-nav .navbar li a:hover {
+  background-color: var(--Very-light-gray);
+  color: var(--White);
 }
 .nav-collapse {
-    display: none;
+  display: none;
 }
-#close-nav{
+.fadeIn {
+  opacity: 1;
+}
+#close-nav {
+  display: block;
+  margin: 3% auto auto;
+  width: fit-content;
+  font-size: 2rem;
+}
+@media (min-width: 1024px) {
+  .main-header {
+    padding: 3% 10%;
+  }
+  .main-header h1 {
+    font-size: 1.8rem;
+  }
+  .main-nav {
+    position: relative;
+    opacity: 1;
+    background-color: transparent;
+    top: 0;
+    border: none;
+    width: 30%;
+  }
+  .navbar-wrapper {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .nav-collapse {
     display: block;
-    margin: 3% auto auto;
-    width: fit-content;
-    font-size: 2rem;
+  }
+  .main-nav .navbar {
+    flex-direction: row;
+    padding: 0;
+  }
+  .main-nav .navbar li {
+    align-items: center;
+    height: 5vh;
+  }
+  .main-nav .navbar li a {
+    line-height: 5vh;
+  }
+  #close-nav {
+    display: none;
+  }
+  #menu-icon {
+    display: none;
+  }
 }

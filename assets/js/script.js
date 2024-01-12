@@ -1,7 +1,15 @@
 const menuIcon = document.querySelector("#menu-icon");
 const mainNav = document.querySelector(".main-nav");
 
-const toggleNav = () => mainNav.classList.toggle("nav-collapse");
+const toggleNav = () => {
+  if (mainNav.classList.contains("nav-collapse")) {
+    mainNav.classList.toggle("nav-collapse");
+    setTimeout(() => mainNav.classList.toggle("fadeIn"), 200);
+  } else {
+    mainNav.classList.toggle("fadeIn");
+    setTimeout(() => mainNav.classList.toggle("nav-collapse"), 200);
+  }
+};
 
 document.addEventListener("click", (e) => {
   if (
