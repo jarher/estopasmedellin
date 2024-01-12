@@ -1,6 +1,6 @@
 .principles {
-    padding: 50px 20px;
-    text-align: center;
+  padding: 40px 20px;
+  text-align: center;
 }
 .principles h3 {
   color: var(--Pale-red);
@@ -8,27 +8,52 @@
   font-weight: 500;
 }
 .principles-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
 }
 .principle {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 }
 .principle-title {
-    font-size: 1.1rem;
-    font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 .principle img {
-    max-width: 50px;
+  max-width: 50px;
 }
 .principle p {
-    color: var(--Gray);
-    font-size: 0.9rem;
-    width: 60%;
+  color: var(--Gray);
+  font-size: 0.9rem;
+  width: 60%;
+}
+@media (min-width: 640px) {
+  .principles-container {
+    flex-direction: row;
+    align-items: baseline;
+  }
+  .principle {
+    flex: 1;
+    gap: 0;
+    justify-content: normal;
+    height: 38vh;
+  }
+  .principle:nth-child(2) {
+    border-left: 1px solid var(--Gray);
+    border-right: 1px solid var(--Gray);
+    padding: 0 1%;
+  }
+  .principle img {
+    max-height: 50px;
+    margin: 7% 0;
+  }
+  .principle p {
+    font-size: 0.8rem;
+    width: 90%;
+  }
 }

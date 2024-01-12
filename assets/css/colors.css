@@ -1,11 +1,12 @@
 :root {
   --Very-light-gray: rgb(224, 224, 224);
-  --Pale-gray : rgb(201, 201, 201);
+  --Pale-gray: rgb(201, 201, 201);
   --Gray: rgb(146, 146, 146);
   --Dark-ray: rgb(85, 85, 85);
+  --Very-light-red: rgb(255 176 176);
   --Pale-red: rgb(255, 0, 0);
   --Red: rgb(224, 0, 0);
   --Dark-red: rgb(135, 0, 0);
   --White: rgb(255, 252, 252);
-  --Wheat:wheat;
+  --Wheat: wheat;
 }

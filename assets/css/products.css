@@ -7,7 +7,7 @@
 .products-article {
   background-color: var(--Red);
   padding: 7px;
-  border-top-left-radius: 20px;
+  border-radius: 20px 20px 0 0;
   height: 60vh;
   margin-top: 15px;
 }
@@ -55,4 +55,22 @@
   border-bottom: 1px solid var(--Pale-gray);
   padding-bottom: 10px;
   margin-top: 10px;
+}
+@media (min-width: 640px) {
+  .products-article p {
+    font-size: 1.3rem;
+  }
+  .products-container {
+    margin-top: -15%;
+  }
+  .products-img-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 2%;
+  }
+  .products-img-container figure{
+    width: 40%;
+    margin: 0;
+  }
 }
