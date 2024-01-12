@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "PaytoneOne-Regular";
+  src: url("../fonts/PaytoneOne-Regular.ttf") format("truetype"),
+    url("../fonts/PaytoneOne-Regular.woff2") format("woff2"),
+    url("../fonts/PaytoneOne-Regular.woff") format("woff");
+}
+html {
+  font-family: "PaytoneOne-Regular";
+}
+* {
+  margin: 0;
+  padding: 0;
+}
