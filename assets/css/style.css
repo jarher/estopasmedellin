@@ -11,3 +11,9 @@ html {
   margin: 0;
   padding: 0;
 }
+body {
+  background-color: var(--Pale-gray);
+}
+.container {
+  background-color: var(--White);
+}
