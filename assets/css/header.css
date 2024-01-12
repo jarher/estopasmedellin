@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  height: 5vh;
+  height: 10vh;
   border-bottom: 1px solid var(--Pale-gray);
 }
 .main-header h1 {

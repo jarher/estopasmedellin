@@ -1,5 +1,7 @@
-@import url("./header.css");
 @import url("./colors.css");
+@import url("./header.css");
+@import url("./introSection.css");
+
 @font-face {
   font-family: "PaytoneOne-Regular";
   src: url("../fonts/PaytoneOne-Regular.ttf") format("truetype"),
@@ -14,6 +16,7 @@ html {
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 body {
   background-color: var(--Very-light-gray);
@@ -21,4 +24,8 @@ body {
 }
 .container {
   background-color: var(--White);
+}
+img{
+    width: 100%;
+    height: auto;
 }
