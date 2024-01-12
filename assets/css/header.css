@@ -5,6 +5,9 @@
   padding: 20px;
   height: 10vh;
   border-bottom: 1px solid var(--Pale-gray);
+  background-color: var(--White);
+  position: sticky;
+  top: 0;
 }
 .main-header h1 {
   font-size: 1.5rem;
