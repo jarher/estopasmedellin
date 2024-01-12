@@ -1,6 +1,7 @@
 @import url("./colors.css");
 @import url("./header.css");
 @import url("./introSection.css");
+@import url("./mainDescription.css");
 
 @font-face {
   font-family: "PaytoneOne-Regular";
@@ -25,7 +26,7 @@ body {
 .container {
   background-color: var(--White);
 }
-img{
-    width: 100%;
-    height: auto;
+img {
+  width: 100%;
+  height: auto;
 }
