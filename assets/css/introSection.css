@@ -22,12 +22,20 @@
   border-radius: 20px;
   margin: 5% auto;
   box-shadow: 5px 5px 10px var(--Very-light-red);
+  transition: all 0.2s ease-out;
+}
+.intro-products-btn:hover{
+  transform: perspective(100px) translateZ(5px);
+  background-color: var(--Pale-red);
 }
 .intro-img {
   width: 60%;
   margin: auto;
   border: 1px solid var(--Pale-gray);
   padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 40px;
 }
 @media (min-width: 640px) {
   .intro-section {
@@ -54,7 +62,7 @@
   }
 }
 @media (min-width: 1024px) {
-  .intro-section{
+  .intro-section {
     padding: 0;
   }
   .intro-text {

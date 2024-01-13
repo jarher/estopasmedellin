@@ -21,10 +21,8 @@
     background-color: transparent;
     margin: 5% 0;
   }
-  .main-description-container {
-    /* padding: 30px; */
-  }
   .main-description-container p {
     color: var(--Red);
+    font-size: 2.5rem;
   }
 }
