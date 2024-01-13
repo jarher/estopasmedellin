@@ -54,8 +54,8 @@
   }
 }
 @media (min-width: 1024px) {
-  .intro-section {
-    padding: 3% 10%;
+  .intro-section{
+    padding: 0;
   }
   .intro-text {
     width: 50%;

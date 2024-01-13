@@ -14,3 +14,17 @@
     font-size: 1.8rem;
   }
 }
+@media (min-width: 1024px) {
+  .main-description {
+    border-top: 10px solid var(--Red);
+    border-bottom: 10px solid var(--Red);
+    background-color: transparent;
+    margin: 5% 0;
+  }
+  .main-description-container {
+    /* padding: 30px; */
+  }
+  .main-description-container p {
+    color: var(--Red);
+  }
+}
