@@ -93,8 +93,7 @@ article {
     margin-bottom: 250px;
   }
   .products-container {
-    /* margin-top: -15%; */
-    margin-top: -80px;
+    margin: -80px 40px 40px;
   }
   .products-img-container {
     gap: 45px;
