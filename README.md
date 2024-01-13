@@ -6,4 +6,4 @@ La página es totalmente responsive.
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./screenshot.png)
