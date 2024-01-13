@@ -53,3 +53,30 @@
     margin: 0;
   }
 }
+@media (min-width: 1024px) {
+  .intro-section {
+    padding: 3% 10%;
+  }
+  .intro-text {
+    width: 50%;
+  }
+  .intro-text h1 {
+    font-size: 2.5rem;
+  }
+  .intro-text h1 span {
+    display: block;
+  }
+  .intro-text p {
+    display: block;
+    text-align: left;
+    font-size: 1.4rem;
+    color: var(--Dark-ray);
+  }
+  .intro-products-btn {
+    width: 40%;
+    font-size: 1.3rem;
+  }
+  .intro-img {
+    width: 28%;
+  }
+}
