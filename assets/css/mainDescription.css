@@ -26,3 +26,8 @@
     font-size: 2.5rem;
   }
 }
+@media (min-width: 1441px) {
+  .main-description-container p {
+    font-size: 4.5rem;
+  }
+}

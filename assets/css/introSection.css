@@ -21,10 +21,10 @@
   text-decoration: none;
   border-radius: 20px;
   margin: 5% auto;
-  box-shadow: 5px 5px 10px var(--Very-light-red);
+  box-shadow: 0px 5px 10px var(--Very-light-red);
   transition: all 0.2s ease-out;
 }
-.intro-products-btn:hover{
+.intro-products-btn:hover {
   transform: perspective(100px) translateZ(5px);
   background-color: var(--Pale-red);
 }
@@ -86,5 +86,13 @@
   }
   .intro-img {
     width: 28%;
+  }
+}
+@media (min-width: 1441px) {
+  .intro-text h1 {
+    font-size: 4.5rem;
+  }
+  .intro-text p {
+    font-size: 2.8rem;
   }
 }

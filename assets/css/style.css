@@ -38,3 +38,10 @@ img {
     padding: 3% 10%;
   }
 }
+@media (min-width: 1441px) {
+  #init{
+    width: 80%;
+    margin: auto;
+    padding: 3% 0;
+  }
+}
