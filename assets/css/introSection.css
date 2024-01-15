@@ -89,10 +89,16 @@
   }
 }
 @media (min-width: 1441px) {
+  .intro-text {
+    height: 72vh;
+  }
   .intro-text h1 {
     font-size: 4.5rem;
   }
   .intro-text p {
     font-size: 2.8rem;
   }
+  .intro-products-btn {
+    font-size: 2.4rem;
+}
 }

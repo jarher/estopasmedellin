@@ -68,6 +68,12 @@ article {
   .products-container {
     margin-top: -15%;
   }
+  .products-main-title {
+    width: 30%;
+  }
+  .products-container-title {
+    width: 22%;
+  }
   .products-img-container {
     flex-direction: row;
     flex-wrap: wrap;
@@ -85,6 +91,9 @@ article {
     padding: 0;
     margin: 3% 0;
   }
+  .products-main-title {
+    width: 25%;
+  }
   .products-article {
     height: 34vh;
   }
@@ -95,10 +104,31 @@ article {
   .products-container {
     margin: -80px 40px 40px;
   }
+  .products-container-title {
+    width: 20%;
+  }
   .products-img-container {
     gap: 45px;
   }
   .products-img-container figure {
     flex-basis: 20%;
   }
+}
+@media (min-width: 1441px) {
+  .products > h2 {
+    font-size: 2rem;
+  }
+  .products-main-title {
+    width: 12%;
+  }
+  .products-container {
+    margin-top: -129px;
+}
+  .products-container-title {
+    width: 8%;
+  }
+  .products-article p {
+    font-size: 1.7rem;
+    margin-bottom: 250px;
+}
 }

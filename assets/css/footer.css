@@ -76,3 +76,18 @@ footer h3 {
     margin-top: 3%;
   }
 }
+@media (min-width: 1441px) {
+  footer h3{
+    font-size: 2.5rem;
+  }
+  .phones-container,
+  .email-container{
+    width: 34%;
+  }
+  .contact-title,
+  .phones-container p,
+  .phones-container p .phone,
+  .email-container a{
+    font-size: 2rem;
+  }
+}

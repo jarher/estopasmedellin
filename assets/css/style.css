@@ -23,7 +23,7 @@ html {
   box-sizing: border-box;
 }
 body {
-  background-color: var(--Very-light-gray);
+  background-color: var(--ultra-light-gray);
   position: relative;
 }
 .container {
@@ -39,9 +39,11 @@ img {
   }
 }
 @media (min-width: 1441px) {
-  #init{
+  .container {
     width: 80%;
     margin: auto;
-    padding: 3% 0;
+  }
+  #init {
+    padding: 3% 5%;
   }
 }
