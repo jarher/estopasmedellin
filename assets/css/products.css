@@ -1,8 +1,9 @@
 .products {
   padding: 20px;
 }
-.products > h2 {
-  text-decoration: underline;
+.products > h3 {
+  text-align: center;
+  font-size: 1.6rem;
 }
 article {
   position: relative;
@@ -10,7 +11,7 @@ article {
 .products-article {
   background-color: var(--Red);
   padding: 7px;
-  border-radius: 20px 20px 0 0;
+  border-radius: 20px 20px 50px 50px;
   margin-top: 15px;
 }
 .products-main-title {
@@ -91,8 +92,11 @@ article {
     padding: 0;
     margin: 3% 0;
   }
+  .products > h3 {
+    font-size: 1.8rem;
+  }
   .products-main-title {
-    width: 25%;
+    width: 210px;
   }
   .products-article {
     height: 34vh;
@@ -105,7 +109,7 @@ article {
     margin: -80px 40px 40px;
   }
   .products-container-title {
-    width: 20%;
+    width: 150px;
   }
   .products-img-container {
     gap: 45px;
@@ -115,20 +119,20 @@ article {
   }
 }
 @media (min-width: 1441px) {
-  .products > h2 {
+  .products > h3 {
     font-size: 2rem;
   }
   .products-main-title {
-    width: 12%;
+    width: 210px;
   }
   .products-container {
     margin-top: -129px;
-}
+  }
   .products-container-title {
-    width: 8%;
+    width: 145px;
   }
   .products-article p {
     font-size: 1.7rem;
     margin-bottom: 250px;
-}
+  }
 }

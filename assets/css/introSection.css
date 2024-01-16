@@ -47,11 +47,17 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 50vh;
   }
   .intro-text h1 {
     font-size: 2rem;
     text-align: left;
+  }
+  .intro-text p {
+    display: block;
+    text-align: left;
+    font-size: 1rem;
+    color: var(--Dark-ray);
+    margin: 15px 0;
   }
   .intro-img {
     margin: 0;
@@ -67,6 +73,7 @@
   }
   .intro-text {
     width: 50%;
+    height: auto;
   }
   .intro-text h1 {
     font-size: 2.5rem;
@@ -75,30 +82,28 @@
     display: block;
   }
   .intro-text p {
-    display: block;
-    text-align: left;
     font-size: 1.4rem;
-    color: var(--Dark-ray);
   }
   .intro-products-btn {
     width: 40%;
     font-size: 1.3rem;
   }
   .intro-img {
-    width: 28%;
+    width: 30%;
   }
 }
 @media (min-width: 1441px) {
-  .intro-text {
-    height: 72vh;
-  }
   .intro-text h1 {
     font-size: 4.5rem;
   }
   .intro-text p {
     font-size: 2.8rem;
+    margin: 25px 0;
   }
   .intro-products-btn {
     font-size: 2.4rem;
-}
+  }
+  .intro-img {
+    width: 25%;
+  }
 }
