@@ -34,7 +34,7 @@ img {
   height: auto;
 }
 @media (min-width: 1024px) {
-  #init {
+  #inicio {
     padding: 3% 10%;
   }
 }
@@ -43,7 +43,7 @@ img {
     width: 80%;
     margin: auto;
   }
-  #init {
+  #inicio {
     padding: 3% 5%;
   }
 }
