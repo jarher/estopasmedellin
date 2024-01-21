@@ -6,6 +6,6 @@ La página es totalmente responsive.
 
 ### Screenshot
 
-![](./screenshot.png)
+<!-- ![](./screenshot.png) -->
 
 demonstración: https://jarher.github.io/estopasmedellin/
