@@ -5,11 +5,14 @@
   text-align: center;
 }
 .intro-text h1 {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 500;
 }
 .intro-text p {
-  display: none;
+  display: block;
+  color: var(--Dark-ray);
+  margin: 2% 0;
+  font-size: 0.9rem;
 }
 .intro-products-btn {
   background-color: var(--Red);
@@ -53,10 +56,9 @@
     text-align: left;
   }
   .intro-text p {
-    display: block;
     text-align: left;
     font-size: 1rem;
-    color: var(--Dark-ray);
+
     margin: 15px 0;
   }
   .intro-img {
