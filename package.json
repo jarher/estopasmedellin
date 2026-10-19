@@ -1,0 +1,23 @@
+{
+  "name": "stitch_estopas_medell_n_sitio_web",
+  "version": "1.0.0",
+  "description": "Sitio web informativo para Estopas Medellín, empresa colombiana especializada en estopa y trapos industriales para limpieza, pulido y mantenimiento.",
+  "main": "main.js",
+  "scripts": {
+    "build": "npm run build:css && npm run buildjs",
+    "build:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify",
+    "watch:css": "tailwindcss -i ./src/input.css -o ./dist/styles.css --minify --watch",
+    "buildjs": "esbuild ./src/main.js --bundle --minify --outfile=./dist/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.3.3",
+    "tailwindcss": "^4.3.3"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}
