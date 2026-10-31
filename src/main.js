@@ -81,6 +81,36 @@ document.addEventListener("DOMContentLoaded", () => {
           revealElements.forEach((el) => el.classList.add("revealed"));
         }
 
+        // Show the WhatsApp shortcut once the product section enters the viewport.
+        const whatsappWidget = document.querySelector(".wa-widget");
+        const productsSection = document.querySelector("#productos");
+
+        if (whatsappWidget && productsSection) {
+          if ("IntersectionObserver" in window) {
+            const whatsappObserver = new IntersectionObserver(
+              (entries, observer) => {
+                if (entries.some((entry) => entry.isIntersecting)) {
+                  whatsappWidget.classList.add("is-visible");
+                  observer.disconnect();
+                }
+              },
+            );
+            whatsappObserver.observe(productsSection);
+          } else {
+            const revealWhatsappWidget = () => {
+              if (productsSection.getBoundingClientRect().top <= window.innerHeight) {
+                whatsappWidget.classList.add("is-visible");
+                window.removeEventListener("scroll", revealWhatsappWidget);
+              }
+            };
+
+            window.addEventListener("scroll", revealWhatsappWidget, {
+              passive: true,
+            });
+            revealWhatsappWidget();
+          }
+        }
+
         // Active link highlighting on scroll
         const sections = document.querySelectorAll("section[id]");
         const navLinks = document.querySelectorAll(".nav-link");
