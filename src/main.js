@@ -285,4 +285,49 @@ document.addEventListener("DOMContentLoaded", () => {
             }
           });
         });
+        //play/pause video based on visibility and tab focus
+        const video = document.querySelector("#proceso video");
+        const videoSection = document.getElementById("proceso");
+
+        if (video && videoSection) {
+          let isSectionVisible = false;
+          let shouldResume = false;
+          let automaticPause = false;
+
+          const syncPlayback = () => {
+            if (!isSectionVisible || document.hidden) {
+              if (!video.paused) {
+                shouldResume = true;
+                automaticPause = true;
+                video.pause();
+              }
+              return;
+            }
+
+            if (shouldResume && video.paused) {
+              video.play().catch(() => {});
+            }
+          };
+
+          video.addEventListener("play", () => {
+            shouldResume = true;
+            syncPlayback();
+          });
+          video.addEventListener("pause", () => {
+            if (automaticPause) {
+              automaticPause = false;
+            } else {
+              shouldResume = false;
+            }
+          });
+
+          document.addEventListener("visibilitychange", syncPlayback);
+          new IntersectionObserver(
+            ([entry]) => {
+              isSectionVisible = entry.isIntersecting;
+              syncPlayback();
+            },
+            { threshold: 0.15 },
+          ).observe(videoSection);
+        }
       });
