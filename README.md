@@ -72,7 +72,7 @@ Las imágenes principales se sirven en WebP con tamaños adecuados al viewport: 
 Tailwind CSS se genera localmente y las fuentes e iconos se sirven desde `assets/fonts/`, por lo que el sitio funciona sin depender de conexiones externas a Google Fonts ni a Material Symbols.
 
 ## Demostración
-Puedes ver la página publicada en este enlace: [Estopas Medellín en la web](https://jarher.github.io/estopasmedellin/)
+Puedes ver la página publicada en este enlace: [Estopas Medellín en la web](https://estopasmedellin.netlify.app/)
 
 ## Capturas
 
