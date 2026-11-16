@@ -197,6 +197,118 @@ body.menu-open {
   overflow: hidden;
 }
 
+@media (min-width: 1024px) {
+  #presentaciones img {
+    cursor: zoom-in;
+  }
+
+  #presentaciones img[role="button"]:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+
+  .product-image-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    place-items: center;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 1.5rem;
+    overflow: hidden;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    opacity: 0;
+    transform: scale(0.985);
+    transition:
+      opacity 240ms ease,
+      transform 300ms cubic-bezier(0.2, 0.75, 0.25, 1);
+  }
+
+  .product-image-modal[open] {
+    display: grid;
+  }
+
+  .product-image-modal::backdrop {
+    background-color: rgb(0 0 0 / 0);
+    transition: background-color 240ms ease;
+  }
+
+  .product-image-modal.is-visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .product-image-modal.is-visible::backdrop {
+    background-color: rgb(0 0 0 / 50%);
+  }
+
+  .product-image-modal__frame {
+    position: relative;
+    max-width: min(90vw, 76rem);
+    max-height: 90vh;
+    max-height: 90dvh;
+    padding: 0.75rem;
+    border: 3px solid #fff;
+    border-radius: 1rem;
+    background: #fff;
+    opacity: 0;
+    transform: scale(0.94);
+    transition:
+      opacity 220ms ease,
+      transform 300ms cubic-bezier(0.2, 0.75, 0.25, 1);
+  }
+
+  .product-image-modal.is-visible .product-image-modal__frame {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .product-image-modal__image {
+    display: block;
+    max-width: calc(90vw - 3rem);
+    max-height: calc(90vh - 3rem);
+    max-height: calc(90dvh - 3rem);
+    border-radius: 0.5rem;
+    object-fit: contain;
+  }
+
+  .product-image-modal__close {
+    position: absolute;
+    z-index: 1;
+    top: 1rem;
+    right: 1rem;
+    display: grid;
+    width: 2.75rem;
+    height: 2.75rem;
+    place-items: center;
+    border: 1px solid rgb(255 255 255 / 70%);
+    border-radius: 9999px;
+    background: var(--color-secondary);
+    color: #fff;
+    cursor: pointer;
+    transition:
+      background-color 180ms ease,
+      transform 180ms ease;
+  }
+
+  .product-image-modal__close:hover {
+    background: var(--color-secondary-container);
+    transform: scale(1.06);
+  }
+
+  .product-image-modal__close:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+  }
+}
+
 /* Mobile navigation reveal */
 @media (max-width: 1023px) {
   .nav-main {

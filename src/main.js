@@ -57,6 +57,134 @@ document.addEventListener("DOMContentLoaded", () => {
     desktopViewport.addEventListener("change", () => setMenuOpen(false));
   }
 
+  const productImages = document.querySelectorAll("#presentaciones img");
+
+  if (productImages.length > 0) {
+    const desktopViewport = window.matchMedia("(min-width: 1024px)");
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    );
+    const imageDialog = document.createElement("dialog");
+    const imageFrame = document.createElement("div");
+    const closeButton = document.createElement("button");
+    const closeIcon = document.createElement("span");
+    const enlargedImage = document.createElement("img");
+    let activeImage = null;
+    let closeTimeout = null;
+
+    imageDialog.className = "product-image-modal";
+    imageDialog.setAttribute("aria-label", "Imagen ampliada del producto");
+    imageFrame.className = "product-image-modal__frame";
+    closeButton.className = "product-image-modal__close";
+    closeButton.type = "button";
+    closeButton.setAttribute("aria-label", "Cerrar imagen ampliada");
+    closeIcon.className = "material-symbols-outlined";
+    closeIcon.setAttribute("aria-hidden", "true");
+    closeIcon.textContent = "close";
+    enlargedImage.className = "product-image-modal__image";
+
+    closeButton.append(closeIcon);
+    imageFrame.append(closeButton, enlargedImage);
+    imageDialog.append(imageFrame);
+    document.body.append(imageDialog);
+
+    const closeImageDialog = (animate = true) => {
+      if (!imageDialog.open) {
+        return;
+      }
+
+      imageDialog.classList.remove("is-visible");
+      window.clearTimeout(closeTimeout);
+
+      if (!animate || reducedMotion.matches) {
+        imageDialog.close();
+        return;
+      }
+
+      closeTimeout = window.setTimeout(() => imageDialog.close(), 300);
+    };
+
+    const openImageDialog = (image) => {
+      if (!desktopViewport.matches || imageDialog.open) {
+        return;
+      }
+
+      activeImage = image;
+      enlargedImage.src = image.currentSrc || image.src;
+      enlargedImage.alt = image.alt;
+      imageDialog.showModal();
+
+      window.requestAnimationFrame(() => {
+        if (imageDialog.open) {
+          imageDialog.classList.add("is-visible");
+          closeButton.focus();
+        }
+      });
+    };
+
+    productImages.forEach((image) => {
+      image.addEventListener("click", () => openImageDialog(image));
+      image.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openImageDialog(image);
+        }
+      });
+    });
+
+    closeButton.addEventListener("click", () => closeImageDialog());
+    imageDialog.addEventListener("click", (event) => {
+      if (event.target === imageDialog) {
+        closeImageDialog();
+      }
+    });
+    imageDialog.addEventListener("cancel", (event) => {
+      event.preventDefault();
+      closeImageDialog();
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && imageDialog.open) {
+        event.preventDefault();
+        closeImageDialog();
+      }
+    });
+    imageDialog.addEventListener("close", () => {
+      window.clearTimeout(closeTimeout);
+      imageDialog.classList.remove("is-visible");
+
+      if (activeImage && activeImage.isConnected && desktopViewport.matches) {
+        activeImage.focus();
+      }
+      activeImage = null;
+    });
+    const updateImageAccessibility = (isDesktop) => {
+      productImages.forEach((image) => {
+        if (isDesktop) {
+          image.tabIndex = 0;
+          image.setAttribute("role", "button");
+          image.setAttribute(
+            "aria-label",
+            `Ampliar imagen: ${image.alt || "producto"}`,
+          );
+        } else {
+          image.removeAttribute("tabindex");
+          image.removeAttribute("role");
+          image.removeAttribute("aria-label");
+        }
+      });
+    };
+
+    desktopViewport.addEventListener("change", (event) => {
+      updateImageAccessibility(event.matches);
+
+      if (!event.matches) {
+        closeImageDialog(false);
+      }
+    });
+
+    updateImageAccessibility(desktopViewport.matches);
+  }
+
   // Scroll reveal observer
   const revealElements = document.querySelectorAll(".reveal-on-scroll");
 
