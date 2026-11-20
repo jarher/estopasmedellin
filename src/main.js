@@ -58,50 +58,56 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const productImages = document.querySelectorAll("#presentaciones img");
+  const imageDialog = document.querySelector("#product-image-modal");
+  const imageFrame = document.querySelector("#product-image-modal-frame");
+  const closeButton = document.querySelector("#product-image-modal-close");
+  const enlargedImage = document.querySelector("#product-image-modal-image");
 
-  if (productImages.length > 0) {
+  if (
+    productImages.length > 0 &&
+    imageDialog &&
+    imageFrame &&
+    closeButton &&
+    enlargedImage
+  ) {
     const desktopViewport = window.matchMedia("(min-width: 1024px)");
     const reducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     );
-    const imageDialog = document.createElement("dialog");
-    const imageFrame = document.createElement("div");
-    const closeButton = document.createElement("button");
-    const closeIcon = document.createElement("span");
-    const enlargedImage = document.createElement("img");
     let activeImage = null;
     let closeTimeout = null;
 
-    imageDialog.className = "product-image-modal";
-    imageDialog.setAttribute("aria-label", "Imagen ampliada del producto");
-    imageFrame.className = "product-image-modal__frame";
-    closeButton.className = "product-image-modal__close";
-    closeButton.type = "button";
-    closeButton.setAttribute("aria-label", "Cerrar imagen ampliada");
-    closeIcon.className = "material-symbols-outlined";
-    closeIcon.setAttribute("aria-hidden", "true");
-    closeIcon.textContent = "close";
-    enlargedImage.className = "product-image-modal__image";
-
-    closeButton.append(closeIcon);
-    imageFrame.append(closeButton, enlargedImage);
-    imageDialog.append(imageFrame);
-    document.body.append(imageDialog);
+    const setImageDialogVisible = (isVisible) => {
+      imageDialog.classList.toggle("opacity-0", !isVisible);
+      imageDialog.classList.toggle("opacity-100", isVisible);
+      imageDialog.classList.toggle("scale-[0.985]", !isVisible);
+      imageDialog.classList.toggle("scale-100", isVisible);
+      imageDialog.classList.toggle("backdrop:bg-black/0", !isVisible);
+      imageDialog.classList.toggle("backdrop:bg-black/50", isVisible);
+      imageFrame.classList.toggle("opacity-0", !isVisible);
+      imageFrame.classList.toggle("opacity-100", isVisible);
+      imageFrame.classList.toggle("scale-[0.94]", !isVisible);
+      imageFrame.classList.toggle("scale-100", isVisible);
+    };
 
     const closeImageDialog = (animate = true) => {
       if (!imageDialog.open) {
         return;
       }
 
-      imageDialog.classList.remove("is-visible");
+      setImageDialogVisible(false);
       window.clearTimeout(closeTimeout);
 
       if (!animate || reducedMotion.matches) {
         imageDialog.close();
+        imageDialog.classList.add("hidden");
         return;
       }
 
-      closeTimeout = window.setTimeout(() => imageDialog.close(), 300);
+      closeTimeout = window.setTimeout(() => {
+        imageDialog.close();
+        imageDialog.classList.add("hidden");
+      }, 300);
     };
 
     const openImageDialog = (image) => {
@@ -112,11 +118,12 @@ document.addEventListener("DOMContentLoaded", () => {
       activeImage = image;
       enlargedImage.src = image.currentSrc || image.src;
       enlargedImage.alt = image.alt;
+      imageDialog.classList.remove("hidden");
       imageDialog.showModal();
 
       window.requestAnimationFrame(() => {
         if (imageDialog.open) {
-          imageDialog.classList.add("is-visible");
+          setImageDialogVisible(true);
           closeButton.focus();
         }
       });
@@ -150,7 +157,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     imageDialog.addEventListener("close", () => {
       window.clearTimeout(closeTimeout);
-      imageDialog.classList.remove("is-visible");
+      imageDialog.classList.add("hidden");
+      setImageDialogVisible(false);
 
       if (activeImage && activeImage.isConnected && desktopViewport.matches) {
         activeImage.focus();

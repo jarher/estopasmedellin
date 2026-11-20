@@ -1871,5 +1871,29 @@
         </svg>
       </span>
     </a>
+    <dialog
+      id="product-image-modal"
+      aria-label="Imagen ampliada del producto"
+      class="fixed inset-0 m-0 box-border hidden grid h-dvh w-screen max-h-none max-w-none place-items-center overflow-hidden border-0 bg-transparent p-6 text-white opacity-0 scale-[0.985] transition-[opacity,transform] duration-[300ms] ease-[cubic-bezier(0.2,0.75,0.25,1)] backdrop:bg-black/0 backdrop:transition-colors backdrop:duration-[240ms]"
+    >
+      <div
+        id="product-image-modal-frame"
+        class="relative max-w-[min(90vw,76rem)] max-h-[90dvh] border-[3px] border-white rounded-2xl bg-white p-3 opacity-0 scale-[0.94] transition-[opacity,transform] duration-[300ms] ease-[cubic-bezier(0.2,0.75,0.25,1)]"
+      >
+        <button
+          id="product-image-modal-close"
+          class="absolute top-4 right-4 z-10 grid size-11 place-items-center rounded-full border border-white/70 bg-secondary text-white cursor-pointer transition-[background-color,transform] duration-[180ms] hover:bg-secondary-container hover:scale-[1.06] focus-visible:outline-[3px] focus-visible:outline-white focus-visible:outline-offset-[3px]"
+          type="button"
+          aria-label="Cerrar imagen ampliada"
+        >
+          <span class="material-symbols-outlined" aria-hidden="true">close</span>
+        </button>
+        <img
+          id="product-image-modal-image"
+          class="block max-w-[calc(90vw_-_3rem)] max-h-[calc(90dvh_-_3rem)] rounded-lg object-contain"
+          alt=""
+        />
+      </div>
+    </dialog>
   </body>
 </html>
