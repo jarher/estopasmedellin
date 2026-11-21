@@ -218,6 +218,57 @@ function initializeScrollRevealEffects() {
   }
 }
 
+function initializeHeaderCtaVisibility() {
+  const headerCta = document.querySelector(".header-cta");
+  const heroSection = document.querySelector("#inicio");
+
+  if (!headerCta || !heroSection) {
+    return;
+  }
+
+  const desktopViewport = window.matchMedia("(min-width: 1024px)");
+  let heroObserver = null;
+  let fallbackScrollHandler = null;
+
+  const isHeroPastViewport = () =>
+    heroSection.getBoundingClientRect().bottom <= 0;
+  const setCtaVisible = (isVisible) =>
+    headerCta.classList.toggle("is-visible", isVisible);
+
+  const updateTracking = () => {
+    heroObserver?.disconnect();
+    heroObserver = null;
+
+    if (fallbackScrollHandler) {
+      window.removeEventListener("scroll", fallbackScrollHandler);
+      fallbackScrollHandler = null;
+    }
+
+    if (!desktopViewport.matches) {
+      setCtaVisible(false);
+      return;
+    }
+
+    setCtaVisible(isHeroPastViewport());
+
+    if ("IntersectionObserver" in window) {
+      heroObserver = new IntersectionObserver(([entry]) => {
+        setCtaVisible(entry.boundingClientRect.bottom <= 0);
+      });
+      heroObserver.observe(heroSection);
+      return;
+    }
+
+    fallbackScrollHandler = () => setCtaVisible(isHeroPastViewport());
+    window.addEventListener("scroll", fallbackScrollHandler, {
+      passive: true,
+    });
+  };
+
+  desktopViewport.addEventListener("change", updateTracking);
+  updateTracking();
+}
+
 function initializeWhatsAppWidgetVisibility() {
   const whatsappWidget = document.querySelector(".wa-widget");
   const productsSection = document.querySelector("#productos");
@@ -363,6 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initializeMobileNavigation();
   initializeProductImageModal();
   initializeScrollRevealEffects();
+  initializeHeaderCtaVisibility();
   initializeWhatsAppWidgetVisibility();
   initializeActiveNavigation();
   initializeFaqAccordion();

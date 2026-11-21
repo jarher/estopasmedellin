@@ -202,6 +202,34 @@ body.menu-open {
     cursor: zoom-in;
   }
 
+  .header-cta {
+    flex: 0 0 auto;
+    max-width: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(1.5rem);
+    transition:
+      max-width 0.3s ease,
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0s linear 0.3s;
+  }
+
+  .header-cta.is-visible {
+    max-width: 12rem;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(0);
+    transition:
+      max-width 0.3s ease,
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0s;
+  }
+
   #presentaciones img[role="button"]:focus-visible {
     outline: 3px solid var(--color-primary);
     outline-offset: 3px;
@@ -386,6 +414,10 @@ details[open] summary .faq-icon {
   }
   .reveal-on-scroll {
     opacity: 1 !important;
+    transform: none !important;
+  }
+  .header-cta,
+  .header-cta.is-visible {
     transform: none !important;
   }
   .ambient-glow-cta {
